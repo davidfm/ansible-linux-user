@@ -9,6 +9,7 @@
 - name: "Create user "
   user:
     name: "{{ username }}"
+    password: "{{ passwd }}"
     comment: "{{ comment }}"
     groups: "{{ groups }}"
     shell: "/bin/bash"
