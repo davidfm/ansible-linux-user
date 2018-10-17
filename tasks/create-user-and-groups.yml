@@ -1,0 +1,18 @@
+---
+
+- name: "Create group"
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ groups }}"
+
+- name: "Create user "
+  user:
+    name: "{{ username }}"
+    comment: "{{ comment }}"
+    groups: "{{ groups }}"
+    generate_ssh_key: "{{ generate_ssh_key }}"
+    ssh_key_bits: "{{ ssh_key_bits }}"
+    ssh_key_file: "{{ ssh_key_file }}"
+    ssh_key_type: "{{ ssh_key_type }}"
+    state: present
