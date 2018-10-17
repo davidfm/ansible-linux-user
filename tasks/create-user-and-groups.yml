@@ -11,6 +11,7 @@
     name: "{{ username }}"
     comment: "{{ comment }}"
     groups: "{{ groups }}"
+    shell: "/bin/bash"
     generate_ssh_key: "{{ generate_ssh_key }}"
     ssh_key_bits: "{{ ssh_key_bits }}"
     ssh_key_file: "{{ ssh_key_file }}"
