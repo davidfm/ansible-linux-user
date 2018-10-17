@@ -1,0 +1,6 @@
+---
+- name: "Add {{ username }} to sudoers"
+  lineinfile:
+    path: "/etc/sudoers.d/{{ username }}"
+    line: "{{ sudoers_line }}"
+    create: yes

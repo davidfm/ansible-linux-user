@@ -1,0 +1,4 @@
+---
+password_sudo: "{{ username }} ALL=(ALL:ALL)"
+passwordless_sudo: "{{ username }} ALL=(ALL:ALL) NOPASSWD:ALL"
+sudoers_line: "{{ passwordless_sudo if set_passwordless_sudo else password_sudo }}"

@@ -1,0 +1,13 @@
+---
+- fail:
+    msg: "You need to define a username"
+  when: username is not defined or username == ''
+
+- fail:
+    msg: "You need to specify a comment (e.g. Full Name)"
+  when: comment is not defined or comment == ''
+
+- fail:
+    msg: "You need to specify at least one group"
+  when: user_groups is not defined or user_groups < 1
+

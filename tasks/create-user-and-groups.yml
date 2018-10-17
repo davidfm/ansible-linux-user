@@ -1,0 +1,20 @@
+---
+
+- name: "Create group"
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ user_groups }}"
+
+- name: "Create user "
+  user:
+    name: "{{ username }}"
+    password: "{{ passwd }}"
+    comment: "{{ comment }}"
+    groups: "{{ groups }}"
+    shell: "/bin/bash"
+    generate_ssh_key: "{{ generate_ssh_key }}"
+    ssh_key_bits: "{{ ssh_key_bits }}"
+    ssh_key_file: "{{ ssh_key_file }}"
+    ssh_key_type: "{{ ssh_key_type }}"
+    state: present
