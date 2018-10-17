@@ -5,4 +5,5 @@ ssh_key_type: rsa
 ssh_key_bits: 4096
 ssh_key_file: .ssh/id_rsa
 
-privileged: False
+sudo_permissions: False
+set_passwordless_sudo: False

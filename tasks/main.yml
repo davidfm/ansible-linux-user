@@ -1,0 +1,5 @@
+---
+- include_tasks: pre-flight-checks.yml
+- include_tasks: create-user-and-groups.yml
+- include_tasks: privileged.yml
+  when: sudo_permissions |bool == True
