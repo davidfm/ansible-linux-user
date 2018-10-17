@@ -9,5 +9,5 @@
 
 - fail:
     msg: "You need to specify at least one group"
-  when: groups is not defined or groups < 1
+  when: user_groups is not defined or user_groups < 1
 
