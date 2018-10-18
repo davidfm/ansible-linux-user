@@ -9,7 +9,7 @@
 - name: "Create user "
   user:
     name: "{{ username }}"
-    password: "{{ passwd }}"
+    password: "{{ passwd |password_hash('sha512') }}"
     comment: "{{ comment }}"
     groups: "{{ groups }}"
     shell: "/bin/bash"
