@@ -9,7 +9,7 @@ Small role to create a Linux user.
 |`username`| | Username |
 |`passwd` | | Encrypted password | 
 |`comment`| |e.g. Full Name|
-|`groups`| | Needs to be a list `['group1', group2']`...|
+|`user_groups`| | Needs to be a list `['group1', group2']`...|
 |`sudo_permissions` | `False` | |
 |`set_passwordless_sudo` | `False` | |
 |`generate_ssh_key` |`yes` | |
