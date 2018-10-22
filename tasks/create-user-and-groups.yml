@@ -11,6 +11,7 @@
     password: "{{ passwd |password_hash('sha512', 65534|random(seed=inventory_hostname)|string) }}"
     comment: "{{ comment }}"
     groups: "{{ user_groups }}"
+    group: "{{ user_groups | first }}"
     generate_ssh_key: "{{ generate_ssh_key }}"
     ssh_key_bits: "{{ ssh_key_bits }}"
     ssh_key_file: "{{ ssh_key_file }}"
