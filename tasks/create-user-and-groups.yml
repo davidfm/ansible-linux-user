@@ -5,6 +5,17 @@
     state: present
   with_items: "{{ user_groups }}"
 
+- name: "Find user's shell if user exists"
+  command: "grep {{ username }} /etc/passwd"
+  register: grep_result
+  changed_when: False
+  failed_when: False
+
+- name: "Set current user shell"
+  set_fact:
+    current_user_shell: "{{ grep_result.stdout.split(':')[-1] }}"
+  when: grep_result.rc == 0
+
 - name: "Create user "
   user:
     name: "{{ username }}"
@@ -16,4 +27,5 @@
     ssh_key_bits: "{{ ssh_key_bits }}"
     ssh_key_file: "{{ ssh_key_file }}"
     ssh_key_type: "{{ ssh_key_type }}"
+    shell: "{{ current_user_shell if current_user_shell is defined else '/bin/bash' }}"
     state: present
